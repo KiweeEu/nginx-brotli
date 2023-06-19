@@ -11,7 +11,7 @@ RUN cd nginx-1.25.0 && ./configure --with-compat --add-dynamic-module=../ngx_bro
     && make modules \
     && ls -la objs/*.so
 
-FROM nginx:1.25.0
+FROM nginx:1.25.1
 COPY --from=builder /app/nginx-1.25.0/objs/ngx_http_brotli_static_module.so /etc/nginx/modules/
 COPY --from=builder /app/nginx-1.25.0/objs/ngx_http_brotli_filter_module.so /etc/nginx/modules/
 RUN echo "load_module modules/ngx_http_brotli_filter_module.so;\nload_module modules/ngx_http_brotli_static_module.so;\n$(cat /etc/nginx/nginx.conf)" > /etc/nginx/nginx.conf
