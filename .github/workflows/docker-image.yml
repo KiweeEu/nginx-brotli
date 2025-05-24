@@ -26,4 +26,4 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: kiweeteam/nginx-brotli:1.27.4,kiweeteam/nginx-brotli:latest
+          tags: kiweeteam/nginx-brotli:1.27.5,kiweeteam/nginx-brotli:latest
