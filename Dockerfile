@@ -10,7 +10,7 @@ RUN git clone --recurse-submodules -j8 https://github.com/google/ngx_brotli
 RUN cd nginx-1.29.0 && ./configure --with-compat --add-dynamic-module=../ngx_brotli \
     && make modules
 
-FROM nginx:1.29.0
+FROM nginx:1.29.1
 COPY --from=builder /app/nginx-1.29.0/objs/ngx_http_brotli_static_module.so /etc/nginx/modules/
 COPY --from=builder /app/nginx-1.29.0/objs/ngx_http_brotli_filter_module.so /etc/nginx/modules/
 RUN echo "load_module modules/ngx_http_brotli_filter_module.so;\nload_module modules/ngx_http_brotli_static_module.so;\n$(cat /etc/nginx/nginx.conf)" > /etc/nginx/nginx.conf
