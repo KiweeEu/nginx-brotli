@@ -17,7 +17,7 @@ RUN echo "load_module modules/ngx_http_brotli_filter_module.so;\nload_module mod
 RUN echo 'brotli on;\n \
 brotli_comp_level 6;\n \
 brotli_static on;\n \
-brotli_types application/atom+xml application/javascript application/json application/rss+xml\n \
+brotli_types application/atom+xml application/javascript application/json application/vnd.api+json application/rss+xml\n \
           application/vnd.ms-fontobject application/x-font-opentype application/x-font-truetype\n \
           application/x-font-ttf application/x-javascript application/xhtml+xml application/xml\n \
           font/eot font/opentype font/otf font/truetype image/svg+xml image/vnd.microsoft.icon\n \
