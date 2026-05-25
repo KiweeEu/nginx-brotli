@@ -1,4 +1,4 @@
-FROM ubuntu:24.04 AS builder
+FROM ubuntu:26.04 AS builder
 
 RUN apt update \
     && apt upgrade -y \
