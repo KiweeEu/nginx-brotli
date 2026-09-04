@@ -2,7 +2,7 @@ FROM ubuntu:26.04 AS builder
 
 RUN apt update \
     && apt upgrade -y \
-    && apt install -y libpcre3 libpcre3-dev zlib1g zlib1g-dev openssl libssl-dev wget git gcc make libbrotli-dev
+    && apt install -y libpcre2-posix3 libpcre2-dev zlib1g zlib1g-dev openssl libssl-dev wget git gcc make libbrotli-dev
 
 WORKDIR /app
 RUN wget https://nginx.org/download/nginx-1.31.5.tar.gz && tar -zxf nginx-1.31.5.tar.gz
