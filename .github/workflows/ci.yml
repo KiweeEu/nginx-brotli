@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    if: "!startsWith(github.ref_name, 'v')"
+    if: github.ref_type == 'branch'
     timeout-minutes: 30
     name: Check if the image builds
     runs-on: ubuntu-latest
